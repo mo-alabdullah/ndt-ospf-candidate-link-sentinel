@@ -52,3 +52,9 @@ The verifier writes no experimental result files.
 - Manuscript source is distributed separately for arXiv upload.
 - Reproducibility artifact: `ndt-ospf-artifact-v1.0.0.zip`
 - License: MIT for software and artifact files
+
+## Archived release
+
+- Version DOI: https://doi.org/10.5281/zenodo.21821039
+- Concept DOI: https://doi.org/10.5281/zenodo.21821038
+- GitHub release: v1.0.0
