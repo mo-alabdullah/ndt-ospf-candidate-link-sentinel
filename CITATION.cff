@@ -9,7 +9,7 @@ authors:
     orcid: "https://orcid.org/0009-0001-0826-4380"
     affiliation: "Department of Network Engineering, School of Computer Engineering, Iran University of Science and Technology (IUST), Tehran, Iran"
 version: "1.0.0"
-date-released: 2026-08-05
+date-released: 2026-08-06
 license: MIT
 doi: "10.5281/zenodo.21821039"
 repository-code: "https://github.com/mo-alabdullah/ndt-ospf-candidate-link-sentinel"
