@@ -11,3 +11,6 @@ authors:
 version: "1.0.0"
 date-released: 2026-08-05
 license: MIT
+doi: "10.5281/zenodo.21821039"
+repository-code: "https://github.com/mo-alabdullah/ndt-ospf-candidate-link-sentinel"
+url: "https://doi.org/10.5281/zenodo.21821039"
