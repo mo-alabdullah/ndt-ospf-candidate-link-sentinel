@@ -1,0 +1,23 @@
+{
+  "artifact_role": "legacy_frozen_manifest_filename_resolution",
+  "frozen_manifest": "lab/phase5/results/frozen_policy.json",
+  "frozen_manifest_sha256": "ef37c6dcbcef7c45cd67965c779c1f48a79977cf0f0a0124f58f24f423f69743",
+  "policy_values_changed": false,
+  "explanation": "The frozen manifest retains filenames recorded before the finite-sample evaluator correction. Their hashes match preserved _original artifacts. Current corrected and recomputed outputs remain separate.",
+  "mappings": [
+    {
+      "manifest_filename": "validation_results.json",
+      "preserved_historical_filename": "validation_results_original.json",
+      "expected_sha256": "7a3c0e08b02a06479630beb2656d9e873395702e5a925ca99ec228c3d4d83b90",
+      "actual_sha256": "7a3c0e08b02a06479630beb2656d9e873395702e5a925ca99ec228c3d4d83b90",
+      "verified": true
+    },
+    {
+      "manifest_filename": "policy_decision.json",
+      "preserved_historical_filename": "policy_decision_original.json",
+      "expected_sha256": "0b4376fb2c73da71ab58b2bbc30193b42386f30ed931d0219d85504519c2b497",
+      "actual_sha256": "0b4376fb2c73da71ab58b2bbc30193b42386f30ed931d0219d85504519c2b497",
+      "verified": true
+    }
+  ]
+}

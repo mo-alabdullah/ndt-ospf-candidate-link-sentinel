@@ -1,0 +1,5 @@
+sample_id,schedule,position,delay_ms,repetition,ops_link_rtt_avg_ms,twin_link_rtt_avg_ms,link_delta_ms,ops_e2e_rtt_avg_ms,twin_e2e_rtt_avg_ms,corrected_prediction_ms,corrected_residual_ms,unsafe,error_type
+randomized_seed303-pos-030-delay-20ms-rep-3,randomized_seed303,30,20.0,3,48.896,0.114,48.782000000000004,50.229,0.14,48.922000000000004,1.306999999999995,True,unsafe_accepted
+randomized_seed202-pos-009-delay-20ms-rep-1,randomized_seed202,9,20.0,1,50.381,0.106,50.275,49.467,0.152,50.427,-0.9600000000000009,False,safe_rejected
+randomized_seed202-pos-028-delay-20ms-rep-2,randomized_seed202,28,20.0,2,50.778,0.124,50.653999999999996,49.722,0.149,50.803,-1.080999999999996,False,safe_rejected
+randomized_seed202-pos-029-delay-20ms-rep-3,randomized_seed202,29,20.0,3,49.995,0.122,49.873,49.235,0.139,50.012,-0.777000000000001,False,safe_rejected

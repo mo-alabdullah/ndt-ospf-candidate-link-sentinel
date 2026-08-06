@@ -1,0 +1,6 @@
+{
+  "policy": "rolling_window_20_full_feedback",
+  "rolling_window": 20,
+  "selected_using": "validation schedules only",
+  "holdout_seen": false
+}

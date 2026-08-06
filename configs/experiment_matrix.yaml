@@ -1,0 +1,50 @@
+project:
+  name: ospf-ndt-drift
+  risk_levels: [0.01, 0.05, 0.10]
+  seeds: [11, 23, 37, 41, 59]
+
+topologies:
+  - name: abilene
+  - name: geant
+  - name: garr
+
+policies:
+  - direct
+  - twin_only
+  - fixed_margin
+  - static_quantile
+  - rolling_quantile
+
+drift:
+  - type: none
+    levels: [none]
+  - type: traffic_volume
+    levels: [mild, moderate, severe]
+  - type: traffic_locality
+    levels: [mild, moderate, severe]
+  - type: link_capacity
+    levels: [mild, moderate, severe]
+  - type: link_latency
+    levels: [mild, moderate, severe]
+  - type: topology
+    levels: [mild, moderate, severe]
+  - type: telemetry_staleness
+    levels: [mild, moderate, severe]
+  - type: compound
+    levels: [mild, moderate, severe]
+
+calibration:
+  rolling_windows: [20, 50, 100]
+  recency_weighting: [false, true]
+
+sla:
+  latency_ms: 50
+  packet_loss_fraction: 0.01
+  maximum_link_utilization: 0.85
+
+outputs:
+  raw_log_format: jsonl
+  processed_table_format: parquet
+  save_configs: true
+  save_routes: true
+  save_traffic_matrix: true

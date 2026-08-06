@@ -1,0 +1,4 @@
+sample_id,position,delay_ms,repetition,corrected_prediction_ms,conformal_upper_bound_ms,ops_e2e_rtt_avg_ms,corrected_residual_ms,raw_sentinel_deploy,conformal_deploy,unsafe
+holdout_seed909-pos-003-delay-20ms-rep-1,3,20.0,1,47.178,47.839,47.844,0.6660000000000039,True,True,False
+holdout_seed909-pos-009-delay-20ms-rep-2,9,20.0,2,49.98499999999999,50.645999999999994,50.967,0.9820000000000064,True,False,True
+holdout_seed909-pos-029-delay-20ms-rep-3,29,20.0,3,51.154,51.815000000000005,51.977,0.8230000000000004,False,False,True

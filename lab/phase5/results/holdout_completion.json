@@ -1,0 +1,19 @@
+{
+  "status": "holdout_completed",
+  "evaluation": "untouched_holdout",
+  "policy": "conformal_candidate_link_sentinel",
+  "conformal_margin_ms": 0.6610000000000014,
+  "samples": 33,
+  "accepted": 19,
+  "unsafe_deployments": 0,
+  "safe_accepted": 19,
+  "safe_rejected": 0,
+  "unsafe_rejected": 14,
+  "parameters_changed_after_freeze": false,
+  "empirical_upper_bound_coverage": 0.6060606060606061,
+  "claim_scope": "Empirical safety and utility under tested latency drift; no nominal conformal coverage guarantee under distribution shift.",
+  "source_sha256": {
+    "phase5_holdout_dataset.csv": "9041d4f4d796236abb2b20e912d25afe39ed6eeffb47096fe75141992deecdad",
+    "holdout_results.json": "a16c60526c98c674d3a8cb5ac7f594bd685292f463b0373fcc5539ace45806c1"
+  }
+}

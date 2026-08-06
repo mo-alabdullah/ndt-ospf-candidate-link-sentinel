@@ -1,0 +1,11 @@
+concept,artifact,implementation_detail,paper_location
+Operational and twin topologies,lab/phase2/ops.clab.yml; lab/phase2/twin.clab.yml,"Two isolated, structurally identical Containerlab networks.",System and Threat Model / System scope
+Baseline OSPF costs,lab/phase2/ops/r1/frr.conf; r2/frr.conf; r3/frr.conf,Indirect costs 10+10; direct r1-r3 cost 30.,System and Threat Model / Baseline and candidate states
+Candidate cost change,lab/phase5/scripts/set_candidate_state.sh,Direct r1-r3 cost changes from 30 to 5 on both ends.,System and Threat Model / Baseline and candidate states
+Hidden operational drift,lab/phase5/scripts/set_ops_delay.sh,Per-direction netem delay on ops r1 eth2 and r3 eth1 only.,System and Threat Model / Drift model
+Pre-deployment link probes,lab/phase5/scripts/collect_sample.sh,20 pings from r1 to directly connected 192.168.2.2 in ops and twin.,Method / Candidate-link measurement
+Corrected prediction,lab/phase5/analysis/parse_sample.py,"twin_e2e + max(0, ops_link - twin_link).",Method / Corrected candidate prediction
+Safety label,lab/phase5/analysis/parse_sample.py,Operational mean end-to-end RTT > 50 ms.,System and Threat Model / Service objective
+Finite-sample residual margin,lab/phase5/analysis/evaluate_sentinel.py,ceil((n+1)(1-alpha)) upper order statistic.,Method / Calibration residual
+Frozen policy,lab/phase5/results/frozen_policy.json,"alpha=0.05, n=22, rank=22, margin=0.661 ms.",Method / Deployment rule
+Holdout evaluation,lab/phase5/analysis/evaluate_holdout.py; results/holdout_results.json,Fixed policy applied once to holdout_seed909.,Experimental Methodology and Results

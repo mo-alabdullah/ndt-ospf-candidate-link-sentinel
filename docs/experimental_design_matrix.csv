@@ -1,0 +1,8 @@
+partition,schedule,samples,seed,delay_design,purpose,used_for_policy_selection,used_for_final_holdout_evaluation
+calibration,calibration_seed77,22,77,2 repetitions of each of 11 delay levels,Compute frozen one-sided corrected-residual margin,yes,no
+validation,randomized_seed101,33,101,3 randomized repetitions of each delay,Order-robust validation,yes,no
+validation,randomized_seed202,33,202,3 randomized repetitions of each delay,Order-robust validation,yes,no
+validation,randomized_seed303,33,303,3 randomized repetitions of each delay,Order-robust validation,yes,no
+validation,abrupt_shift,45,,"low regime, abrupt high regime, recovery",Shift stress test,yes,no
+validation,up_down,42,,ascending and descending sweeps,Sequential trend and reversal stress test,yes,no
+holdout,holdout_seed909,33,909,3 randomized repetitions of each delay,One-time evaluation after policy freezing,no,yes

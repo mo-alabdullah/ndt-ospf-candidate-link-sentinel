@@ -1,0 +1,22 @@
+{
+  "artifact_role": "post_holdout_validation_recomputation",
+  "status": "policy_ready_for_freeze",
+  "holdout_locked": false,
+  "selected_policy": "conformal_candidate_link_sentinel",
+  "selection_summary": {
+    "policy": "conformal_candidate_link_sentinel",
+    "samples": 186,
+    "accepted": 110,
+    "unsafe_deployments": 1,
+    "safe_accepted": 109,
+    "safe_rejected": 3,
+    "unsafe_rejected": 73,
+    "schedules_with_safe_acceptance": 5,
+    "acceptance_rate": 0.5913978494623656,
+    "unsafe_rate_among_accepted": 0.00909090909090909,
+    "safe_coverage": 0.9732142857142857,
+    "non_vacuous": true,
+    "schedule_robust_utility": true
+  },
+  "holdout_seen": false
+}

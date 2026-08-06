@@ -1,0 +1,53 @@
+{
+  "status": "method_revision_required",
+  "holdout_locked": true,
+  "reason": "No tested rolling policy is both non-vacuous and utility-bearing across every validation schedule.",
+  "rolling_candidates": [
+    {
+      "policy": "rolling_window_10_full_feedback",
+      "samples": 186,
+      "accepted": 16,
+      "unsafe_deployments": 2,
+      "safe_accepted": 14,
+      "safe_rejected": 107,
+      "schedules_with_safe_acceptance": 2,
+      "schedule_count": 5,
+      "acceptance_rate": 0.08602150537634409,
+      "unsafe_rate_among_accepted": 0.125,
+      "safe_coverage": 0.11570247933884298,
+      "non_vacuous": true,
+      "schedule_robust_utility": false
+    },
+    {
+      "policy": "rolling_window_20_full_feedback",
+      "samples": 186,
+      "accepted": 0,
+      "unsafe_deployments": 0,
+      "safe_accepted": 0,
+      "safe_rejected": 121,
+      "schedules_with_safe_acceptance": 0,
+      "schedule_count": 5,
+      "acceptance_rate": 0.0,
+      "unsafe_rate_among_accepted": null,
+      "safe_coverage": 0.0,
+      "non_vacuous": false,
+      "schedule_robust_utility": false
+    },
+    {
+      "policy": "rolling_window_50_full_feedback",
+      "samples": 186,
+      "accepted": 0,
+      "unsafe_deployments": 0,
+      "safe_accepted": 0,
+      "safe_rejected": 121,
+      "schedules_with_safe_acceptance": 0,
+      "schedule_count": 5,
+      "acceptance_rate": 0.0,
+      "unsafe_rate_among_accepted": null,
+      "safe_coverage": 0.0,
+      "non_vacuous": false,
+      "schedule_robust_utility": false
+    }
+  ],
+  "holdout_seen": false
+}

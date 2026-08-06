@@ -1,0 +1,318 @@
+{
+  "artifact_role": "post_holdout_validation_recomputation",
+  "historical_decision_context": "holdout unseen during policy selection",
+  "current_project_holdout_status": "see holdout_results.json and dated provenance records",
+  "calibration_samples": 22,
+  "validation_samples": 186,
+  "alpha": 0.05,
+  "quantile_level": 0.95,
+  "finite_sample_conformal_rank": 22,
+  "sentinel_conformal_margin_ms": 0.6610000000000014,
+  "schedules": {
+    "abrupt_shift": [
+      {
+        "policy": "direct",
+        "samples": 45,
+        "accepted": 45,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 15,
+        "unsafe_rate_among_accepted": 0.3333333333333333,
+        "safe_accepted": 30,
+        "safe_rejected": 0,
+        "unsafe_rejected": 0,
+        "safe_coverage": 1.0
+      },
+      {
+        "policy": "twin_only",
+        "samples": 45,
+        "accepted": 45,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 15,
+        "unsafe_rate_among_accepted": 0.3333333333333333,
+        "safe_accepted": 30,
+        "safe_rejected": 0,
+        "unsafe_rejected": 0,
+        "safe_coverage": 1.0
+      },
+      {
+        "policy": "raw_candidate_link_sentinel",
+        "samples": 45,
+        "accepted": 30,
+        "acceptance_rate": 0.6666666666666666,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 30,
+        "safe_rejected": 0,
+        "unsafe_rejected": 15,
+        "safe_coverage": 1.0
+      },
+      {
+        "policy": "conformal_candidate_link_sentinel",
+        "samples": 45,
+        "accepted": 30,
+        "acceptance_rate": 0.6666666666666666,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 30,
+        "safe_rejected": 0,
+        "unsafe_rejected": 15,
+        "safe_coverage": 1.0
+      }
+    ],
+    "randomized_seed101": [
+      {
+        "policy": "direct",
+        "samples": 33,
+        "accepted": 33,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 15,
+        "unsafe_rate_among_accepted": 0.45454545454545453,
+        "safe_accepted": 18,
+        "safe_rejected": 0,
+        "unsafe_rejected": 0,
+        "safe_coverage": 1.0
+      },
+      {
+        "policy": "twin_only",
+        "samples": 33,
+        "accepted": 33,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 15,
+        "unsafe_rate_among_accepted": 0.45454545454545453,
+        "safe_accepted": 18,
+        "safe_rejected": 0,
+        "unsafe_rejected": 0,
+        "safe_coverage": 1.0
+      },
+      {
+        "policy": "raw_candidate_link_sentinel",
+        "samples": 33,
+        "accepted": 18,
+        "acceptance_rate": 0.5454545454545454,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 18,
+        "safe_rejected": 0,
+        "unsafe_rejected": 15,
+        "safe_coverage": 1.0
+      },
+      {
+        "policy": "conformal_candidate_link_sentinel",
+        "samples": 33,
+        "accepted": 18,
+        "acceptance_rate": 0.5454545454545454,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 18,
+        "safe_rejected": 0,
+        "unsafe_rejected": 15,
+        "safe_coverage": 1.0
+      }
+    ],
+    "randomized_seed202": [
+      {
+        "policy": "direct",
+        "samples": 33,
+        "accepted": 33,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 12,
+        "unsafe_rate_among_accepted": 0.36363636363636365,
+        "safe_accepted": 21,
+        "safe_rejected": 0,
+        "unsafe_rejected": 0,
+        "safe_coverage": 1.0
+      },
+      {
+        "policy": "twin_only",
+        "samples": 33,
+        "accepted": 33,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 12,
+        "unsafe_rate_among_accepted": 0.36363636363636365,
+        "safe_accepted": 21,
+        "safe_rejected": 0,
+        "unsafe_rejected": 0,
+        "safe_coverage": 1.0
+      },
+      {
+        "policy": "raw_candidate_link_sentinel",
+        "samples": 33,
+        "accepted": 18,
+        "acceptance_rate": 0.5454545454545454,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 18,
+        "safe_rejected": 3,
+        "unsafe_rejected": 12,
+        "safe_coverage": 0.8571428571428571
+      },
+      {
+        "policy": "conformal_candidate_link_sentinel",
+        "samples": 33,
+        "accepted": 18,
+        "acceptance_rate": 0.5454545454545454,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 18,
+        "safe_rejected": 3,
+        "unsafe_rejected": 12,
+        "safe_coverage": 0.8571428571428571
+      }
+    ],
+    "randomized_seed303": [
+      {
+        "policy": "direct",
+        "samples": 33,
+        "accepted": 33,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 15,
+        "unsafe_rate_among_accepted": 0.45454545454545453,
+        "safe_accepted": 18,
+        "safe_rejected": 0,
+        "unsafe_rejected": 0,
+        "safe_coverage": 1.0
+      },
+      {
+        "policy": "twin_only",
+        "samples": 33,
+        "accepted": 33,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 15,
+        "unsafe_rate_among_accepted": 0.45454545454545453,
+        "safe_accepted": 18,
+        "safe_rejected": 0,
+        "unsafe_rejected": 0,
+        "safe_coverage": 1.0
+      },
+      {
+        "policy": "raw_candidate_link_sentinel",
+        "samples": 33,
+        "accepted": 19,
+        "acceptance_rate": 0.5757575757575758,
+        "unsafe_deployments": 1,
+        "unsafe_rate_among_accepted": 0.05263157894736842,
+        "safe_accepted": 18,
+        "safe_rejected": 0,
+        "unsafe_rejected": 14,
+        "safe_coverage": 1.0
+      },
+      {
+        "policy": "conformal_candidate_link_sentinel",
+        "samples": 33,
+        "accepted": 19,
+        "acceptance_rate": 0.5757575757575758,
+        "unsafe_deployments": 1,
+        "unsafe_rate_among_accepted": 0.05263157894736842,
+        "safe_accepted": 18,
+        "safe_rejected": 0,
+        "unsafe_rejected": 14,
+        "safe_coverage": 1.0
+      }
+    ],
+    "up_down": [
+      {
+        "policy": "direct",
+        "samples": 42,
+        "accepted": 42,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 17,
+        "unsafe_rate_among_accepted": 0.40476190476190477,
+        "safe_accepted": 25,
+        "safe_rejected": 0,
+        "unsafe_rejected": 0,
+        "safe_coverage": 1.0
+      },
+      {
+        "policy": "twin_only",
+        "samples": 42,
+        "accepted": 42,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 17,
+        "unsafe_rate_among_accepted": 0.40476190476190477,
+        "safe_accepted": 25,
+        "safe_rejected": 0,
+        "unsafe_rejected": 0,
+        "safe_coverage": 1.0
+      },
+      {
+        "policy": "raw_candidate_link_sentinel",
+        "samples": 42,
+        "accepted": 26,
+        "acceptance_rate": 0.6190476190476191,
+        "unsafe_deployments": 1,
+        "unsafe_rate_among_accepted": 0.038461538461538464,
+        "safe_accepted": 25,
+        "safe_rejected": 0,
+        "unsafe_rejected": 16,
+        "safe_coverage": 1.0
+      },
+      {
+        "policy": "conformal_candidate_link_sentinel",
+        "samples": 42,
+        "accepted": 25,
+        "acceptance_rate": 0.5952380952380952,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 25,
+        "safe_rejected": 0,
+        "unsafe_rejected": 17,
+        "safe_coverage": 1.0
+      }
+    ]
+  },
+  "aggregate_candidates": [
+    {
+      "policy": "raw_candidate_link_sentinel",
+      "samples": 186,
+      "accepted": 111,
+      "unsafe_deployments": 2,
+      "safe_accepted": 109,
+      "safe_rejected": 3,
+      "unsafe_rejected": 72,
+      "schedules_with_safe_acceptance": 5,
+      "acceptance_rate": 0.5967741935483871,
+      "unsafe_rate_among_accepted": 0.018018018018018018,
+      "safe_coverage": 0.9732142857142857,
+      "non_vacuous": true,
+      "schedule_robust_utility": true
+    },
+    {
+      "policy": "conformal_candidate_link_sentinel",
+      "samples": 186,
+      "accepted": 110,
+      "unsafe_deployments": 1,
+      "safe_accepted": 109,
+      "safe_rejected": 3,
+      "unsafe_rejected": 73,
+      "schedules_with_safe_acceptance": 5,
+      "acceptance_rate": 0.5913978494623656,
+      "unsafe_rate_among_accepted": 0.00909090909090909,
+      "safe_coverage": 0.9732142857142857,
+      "non_vacuous": true,
+      "schedule_robust_utility": true
+    }
+  ],
+  "policy_decision": {
+    "artifact_role": "post_holdout_validation_recomputation",
+    "status": "policy_ready_for_freeze",
+    "holdout_locked": false,
+    "selected_policy": "conformal_candidate_link_sentinel",
+    "selection_summary": {
+      "policy": "conformal_candidate_link_sentinel",
+      "samples": 186,
+      "accepted": 110,
+      "unsafe_deployments": 1,
+      "safe_accepted": 109,
+      "safe_rejected": 3,
+      "unsafe_rejected": 73,
+      "schedules_with_safe_acceptance": 5,
+      "acceptance_rate": 0.5913978494623656,
+      "unsafe_rate_among_accepted": 0.00909090909090909,
+      "safe_coverage": 0.9732142857142857,
+      "non_vacuous": true,
+      "schedule_robust_utility": true
+    },
+    "holdout_seen": false
+  },
+  "limitation": "Candidate outcomes are observed for evaluation. The sentinel inputs are available before deployment."
+}

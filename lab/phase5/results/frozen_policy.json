@@ -1,0 +1,36 @@
+{
+  "status": "frozen_for_holdout",
+  "policy": "conformal_candidate_link_sentinel",
+  "latency_sla_ms": 50.0,
+  "alpha": 0.05,
+  "quantile_level": 0.95,
+  "calibration_samples": 22,
+  "finite_sample_conformal_rank": 22,
+  "conformal_margin_ms": 0.6610000000000014,
+  "prediction_rule": "twin_e2e_rtt_avg_ms + max(0, ops_link_rtt_avg_ms - twin_link_rtt_avg_ms)",
+  "deployment_rule": "corrected_prediction_ms + conformal_margin_ms <= latency_sla_ms",
+  "validation_samples": 186,
+  "validation_summary": {
+    "policy": "conformal_candidate_link_sentinel",
+    "samples": 186,
+    "accepted": 110,
+    "acceptance_rate": 0.5913978494623656,
+    "unsafe_deployments": 1,
+    "unsafe_rate_among_accepted": 0.00909090909090909,
+    "unsafe_rate_ci95_low": 0.0016065753043216016,
+    "unsafe_rate_ci95_high": 0.0497056520793305,
+    "safe_accepted": 109,
+    "safe_rejected": 3,
+    "safe_coverage": 0.9732142857142857,
+    "safe_coverage_ci95_low": 0.9241945450432856,
+    "safe_coverage_ci95_high": 0.9908491800540711
+  },
+  "source_sha256": {
+    "phase5_sentinel_dataset.csv": "292fdeea62e29afac84a4e7de02fa976dd757f9132c6cce2e97659fd4b5f29a6",
+    "validation_results.json": "7a3c0e08b02a06479630beb2656d9e873395702e5a925ca99ec228c3d4d83b90",
+    "policy_decision.json": "0b4376fb2c73da71ab58b2bbc30193b42386f30ed931d0219d85504519c2b497"
+  },
+  "holdout_schedule": "holdout_seed909",
+  "holdout_seen": false,
+  "parameters_must_not_change_after_holdout": true
+}

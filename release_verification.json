@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "frozen_policy_sha256": "ef37c6dcbcef7c45cd67965c779c1f48a79977cf0f0a0124f58f24f423f69743",
+  "validation": {
+    "samples": 186,
+    "accepted": 110,
+    "unsafe_deployments": 1,
+    "safe_accepted": 109,
+    "safe_rejected": 3,
+    "unsafe_rejected": 73,
+    "safe_coverage": 0.9732142857142857,
+    "raw_accepted": 111,
+    "raw_unsafe": 2,
+    "twin_accepted": 186,
+    "twin_unsafe": 74,
+    "corrected_mae": 0.7450107526881714,
+    "twin_mae": 38.15406989247312,
+    "upper_coverage": 0.8064516129032258,
+    "pearson": 0.9993322660511236,
+    "route_agreement": 186
+  },
+  "holdout": {
+    "samples": 33,
+    "accepted": 19,
+    "unsafe_deployments": 0,
+    "safe_accepted": 19,
+    "safe_rejected": 0,
+    "unsafe_rejected": 14,
+    "safe_coverage": 1.0,
+    "raw_accepted": 20,
+    "raw_unsafe": 1,
+    "twin_accepted": 33,
+    "twin_unsafe": 14,
+    "corrected_mae": 0.9900909090909111,
+    "twin_mae": 40.91748484848485,
+    "upper_coverage": 0.6060606060606061,
+    "pearson": 0.9991351571345959,
+    "route_agreement": 33
+  }
+}

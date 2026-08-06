@@ -1,0 +1,3 @@
+scenario,ops_route_metric,ops_next_hop,twin_route_metric,twin_next_hop,ops_rtt_avg_ms,twin_rtt_avg_ms,rtt_residual_ms,ops_packet_loss_percent,twin_packet_loss_percent,latency_sla_ms,operational_unsafe,twin_predicted_safe
+baseline,30,192.168.1.2,30,192.168.1.2,0.153,0.184,-0.031,0.0,0.0,50.0,False,True
+hidden_direct_link_delay,15,192.168.2.2,15,192.168.2.2,66.274,0.166,66.108,0.0,0.0,50.0,True,True

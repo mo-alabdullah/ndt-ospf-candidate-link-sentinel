@@ -1,0 +1,316 @@
+{
+  "evaluation": "untouched_holdout",
+  "policy": {
+    "status": "frozen_for_holdout",
+    "policy": "conformal_candidate_link_sentinel",
+    "latency_sla_ms": 50.0,
+    "alpha": 0.05,
+    "quantile_level": 0.95,
+    "calibration_samples": 22,
+    "finite_sample_conformal_rank": 22,
+    "conformal_margin_ms": 0.6610000000000014,
+    "prediction_rule": "twin_e2e_rtt_avg_ms + max(0, ops_link_rtt_avg_ms - twin_link_rtt_avg_ms)",
+    "deployment_rule": "corrected_prediction_ms + conformal_margin_ms <= latency_sla_ms",
+    "validation_samples": 186,
+    "validation_summary": {
+      "policy": "conformal_candidate_link_sentinel",
+      "samples": 186,
+      "accepted": 110,
+      "acceptance_rate": 0.5913978494623656,
+      "unsafe_deployments": 1,
+      "unsafe_rate_among_accepted": 0.00909090909090909,
+      "unsafe_rate_ci95_low": 0.0016065753043216016,
+      "unsafe_rate_ci95_high": 0.0497056520793305,
+      "safe_accepted": 109,
+      "safe_rejected": 3,
+      "safe_coverage": 0.9732142857142857,
+      "safe_coverage_ci95_low": 0.9241945450432856,
+      "safe_coverage_ci95_high": 0.9908491800540711
+    },
+    "source_sha256": {
+      "phase5_sentinel_dataset.csv": "292fdeea62e29afac84a4e7de02fa976dd757f9132c6cce2e97659fd4b5f29a6",
+      "validation_results.json": "7a3c0e08b02a06479630beb2656d9e873395702e5a925ca99ec228c3d4d83b90",
+      "policy_decision.json": "0b4376fb2c73da71ab58b2bbc30193b42386f30ed931d0219d85504519c2b497"
+    },
+    "holdout_schedule": "holdout_seed909",
+    "holdout_seen": false,
+    "parameters_must_not_change_after_holdout": true
+  },
+  "results": {
+    "samples": 33,
+    "accepted": 19,
+    "unsafe_deployments": 0,
+    "safe_accepted": 19,
+    "safe_rejected": 0,
+    "acceptance_rate": 0.5757575757575758,
+    "unsafe_rate_among_accepted": 0.0,
+    "safe_coverage": 1.0
+  },
+  "records": [
+    {
+      "sample_id": "holdout_seed909-pos-001-delay-15ms-rep-1",
+      "corrected_prediction_ms": 34.968999999999994,
+      "conformal_upper_bound_ms": 35.629999999999995,
+      "observed_rtt_ms": 35.823,
+      "deploy": true,
+      "unsafe": false
+    },
+    {
+      "sample_id": "holdout_seed909-pos-002-delay-2ms-rep-1",
+      "corrected_prediction_ms": 7.098,
+      "conformal_upper_bound_ms": 7.759000000000001,
+      "observed_rtt_ms": 6.977,
+      "deploy": true,
+      "unsafe": false
+    },
+    {
+      "sample_id": "holdout_seed909-pos-003-delay-20ms-rep-1",
+      "corrected_prediction_ms": 47.178,
+      "conformal_upper_bound_ms": 47.839,
+      "observed_rtt_ms": 47.844,
+      "deploy": true,
+      "unsafe": false
+    },
+    {
+      "sample_id": "holdout_seed909-pos-004-delay-25ms-rep-1",
+      "corrected_prediction_ms": 56.486000000000004,
+      "conformal_upper_bound_ms": 57.147000000000006,
+      "observed_rtt_ms": 57.302,
+      "deploy": false,
+      "unsafe": true
+    },
+    {
+      "sample_id": "holdout_seed909-pos-005-delay-10ms-rep-1",
+      "corrected_prediction_ms": 23.966,
+      "conformal_upper_bound_ms": 24.627000000000002,
+      "observed_rtt_ms": 24.101,
+      "deploy": true,
+      "unsafe": false
+    },
+    {
+      "sample_id": "holdout_seed909-pos-006-delay-35ms-rep-1",
+      "corrected_prediction_ms": 78.844,
+      "conformal_upper_bound_ms": 79.505,
+      "observed_rtt_ms": 81.578,
+      "deploy": false,
+      "unsafe": true
+    },
+    {
+      "sample_id": "holdout_seed909-pos-007-delay-25ms-rep-2",
+      "corrected_prediction_ms": 61.067,
+      "conformal_upper_bound_ms": 61.728,
+      "observed_rtt_ms": 64.914,
+      "deploy": false,
+      "unsafe": true
+    },
+    {
+      "sample_id": "holdout_seed909-pos-008-delay-5ms-rep-1",
+      "corrected_prediction_ms": 14.054,
+      "conformal_upper_bound_ms": 14.715000000000002,
+      "observed_rtt_ms": 14.208,
+      "deploy": true,
+      "unsafe": false
+    },
+    {
+      "sample_id": "holdout_seed909-pos-009-delay-20ms-rep-2",
+      "corrected_prediction_ms": 49.98499999999999,
+      "conformal_upper_bound_ms": 50.645999999999994,
+      "observed_rtt_ms": 50.967,
+      "deploy": false,
+      "unsafe": true
+    },
+    {
+      "sample_id": "holdout_seed909-pos-010-delay-1ms-rep-1",
+      "corrected_prediction_ms": 6.615,
+      "conformal_upper_bound_ms": 7.276000000000002,
+      "observed_rtt_ms": 6.067,
+      "deploy": true,
+      "unsafe": false
+    },
+    {
+      "sample_id": "holdout_seed909-pos-011-delay-40ms-rep-1",
+      "corrected_prediction_ms": 90.94899999999998,
+      "conformal_upper_bound_ms": 91.60999999999999,
+      "observed_rtt_ms": 91.45,
+      "deploy": false,
+      "unsafe": true
+    },
+    {
+      "sample_id": "holdout_seed909-pos-012-delay-1ms-rep-2",
+      "corrected_prediction_ms": 6.345,
+      "conformal_upper_bound_ms": 7.006000000000001,
+      "observed_rtt_ms": 6.359,
+      "deploy": true,
+      "unsafe": false
+    },
+    {
+      "sample_id": "holdout_seed909-pos-013-delay-30ms-rep-1",
+      "corrected_prediction_ms": 73.303,
+      "conformal_upper_bound_ms": 73.964,
+      "observed_rtt_ms": 72.495,
+      "deploy": false,
+      "unsafe": true
+    },
+    {
+      "sample_id": "holdout_seed909-pos-014-delay-0ms-rep-1",
+      "corrected_prediction_ms": 0.102,
+      "conformal_upper_bound_ms": 0.7630000000000013,
+      "observed_rtt_ms": 0.142,
+      "deploy": true,
+      "unsafe": false
+    },
+    {
+      "sample_id": "holdout_seed909-pos-015-delay-0ms-rep-2",
+      "corrected_prediction_ms": 0.19,
+      "conformal_upper_bound_ms": 0.8510000000000013,
+      "observed_rtt_ms": 0.136,
+      "deploy": true,
+      "unsafe": false
+    },
+    {
+      "sample_id": "holdout_seed909-pos-016-delay-30ms-rep-2",
+      "corrected_prediction_ms": 74.83600000000001,
+      "conformal_upper_bound_ms": 75.49700000000001,
+      "observed_rtt_ms": 72.017,
+      "deploy": false,
+      "unsafe": true
+    },
+    {
+      "sample_id": "holdout_seed909-pos-017-delay-5ms-rep-2",
+      "corrected_prediction_ms": 13.963,
+      "conformal_upper_bound_ms": 14.624,
+      "observed_rtt_ms": 14.045,
+      "deploy": true,
+      "unsafe": false
+    },
+    {
+      "sample_id": "holdout_seed909-pos-018-delay-15ms-rep-2",
+      "corrected_prediction_ms": 39.874,
+      "conformal_upper_bound_ms": 40.535000000000004,
+      "observed_rtt_ms": 41.137,
+      "deploy": true,
+      "unsafe": false
+    },
+    {
+      "sample_id": "holdout_seed909-pos-019-delay-10ms-rep-2",
+      "corrected_prediction_ms": 27.596,
+      "conformal_upper_bound_ms": 28.257,
+      "observed_rtt_ms": 27.615,
+      "deploy": true,
+      "unsafe": false
+    },
+    {
+      "sample_id": "holdout_seed909-pos-020-delay-15ms-rep-3",
+      "corrected_prediction_ms": 38.17,
+      "conformal_upper_bound_ms": 38.831,
+      "observed_rtt_ms": 40.606,
+      "deploy": true,
+      "unsafe": false
+    },
+    {
+      "sample_id": "holdout_seed909-pos-021-delay-40ms-rep-2",
+      "corrected_prediction_ms": 89.485,
+      "conformal_upper_bound_ms": 90.146,
+      "observed_rtt_ms": 92.155,
+      "deploy": false,
+      "unsafe": true
+    },
+    {
+      "sample_id": "holdout_seed909-pos-022-delay-40ms-rep-3",
+      "corrected_prediction_ms": 89.926,
+      "conformal_upper_bound_ms": 90.587,
+      "observed_rtt_ms": 92.715,
+      "deploy": false,
+      "unsafe": true
+    },
+    {
+      "sample_id": "holdout_seed909-pos-023-delay-1ms-rep-3",
+      "corrected_prediction_ms": 6.406999999999999,
+      "conformal_upper_bound_ms": 7.0680000000000005,
+      "observed_rtt_ms": 6.408,
+      "deploy": true,
+      "unsafe": false
+    },
+    {
+      "sample_id": "holdout_seed909-pos-024-delay-35ms-rep-2",
+      "corrected_prediction_ms": 82.66900000000001,
+      "conformal_upper_bound_ms": 83.33000000000001,
+      "observed_rtt_ms": 80.988,
+      "deploy": false,
+      "unsafe": true
+    },
+    {
+      "sample_id": "holdout_seed909-pos-025-delay-30ms-rep-3",
+      "corrected_prediction_ms": 72.911,
+      "conformal_upper_bound_ms": 73.572,
+      "observed_rtt_ms": 71.714,
+      "deploy": false,
+      "unsafe": true
+    },
+    {
+      "sample_id": "holdout_seed909-pos-026-delay-2ms-rep-2",
+      "corrected_prediction_ms": 7.338,
+      "conformal_upper_bound_ms": 7.999000000000001,
+      "observed_rtt_ms": 7.559,
+      "deploy": true,
+      "unsafe": false
+    },
+    {
+      "sample_id": "holdout_seed909-pos-027-delay-0ms-rep-3",
+      "corrected_prediction_ms": 0.15999999999999998,
+      "conformal_upper_bound_ms": 0.8210000000000013,
+      "observed_rtt_ms": 0.175,
+      "deploy": true,
+      "unsafe": false
+    },
+    {
+      "sample_id": "holdout_seed909-pos-028-delay-25ms-rep-3",
+      "corrected_prediction_ms": 62.276,
+      "conformal_upper_bound_ms": 62.937000000000005,
+      "observed_rtt_ms": 62.181,
+      "deploy": false,
+      "unsafe": true
+    },
+    {
+      "sample_id": "holdout_seed909-pos-029-delay-20ms-rep-3",
+      "corrected_prediction_ms": 51.153999999999996,
+      "conformal_upper_bound_ms": 51.815,
+      "observed_rtt_ms": 51.977,
+      "deploy": false,
+      "unsafe": true
+    },
+    {
+      "sample_id": "holdout_seed909-pos-030-delay-10ms-rep-3",
+      "corrected_prediction_ms": 26.437,
+      "conformal_upper_bound_ms": 27.098000000000003,
+      "observed_rtt_ms": 27.629,
+      "deploy": true,
+      "unsafe": false
+    },
+    {
+      "sample_id": "holdout_seed909-pos-031-delay-35ms-rep-3",
+      "corrected_prediction_ms": 81.06,
+      "conformal_upper_bound_ms": 81.721,
+      "observed_rtt_ms": 83.27,
+      "deploy": false,
+      "unsafe": true
+    },
+    {
+      "sample_id": "holdout_seed909-pos-032-delay-5ms-rep-3",
+      "corrected_prediction_ms": 13.974,
+      "conformal_upper_bound_ms": 14.635000000000002,
+      "observed_rtt_ms": 14.516,
+      "deploy": true,
+      "unsafe": false
+    },
+    {
+      "sample_id": "holdout_seed909-pos-033-delay-2ms-rep-3",
+      "corrected_prediction_ms": 7.827,
+      "conformal_upper_bound_ms": 8.488000000000001,
+      "observed_rtt_ms": 7.483,
+      "deploy": true,
+      "unsafe": false
+    }
+  ],
+  "parameters_changed_after_freeze": false
+}

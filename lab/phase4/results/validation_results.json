@@ -1,0 +1,411 @@
+{
+  "calibration_samples": 22,
+  "validation_samples": 186,
+  "schedules": {
+    "abrupt_shift": [
+      {
+        "policy": "direct",
+        "samples": 45,
+        "accepted": 45,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 15,
+        "unsafe_rate_among_accepted": 0.3333333333333333,
+        "safe_accepted": 30,
+        "safe_rejected": 0
+      },
+      {
+        "policy": "twin_only",
+        "samples": 45,
+        "accepted": 45,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 15,
+        "unsafe_rate_among_accepted": 0.3333333333333333,
+        "safe_accepted": 30,
+        "safe_rejected": 0
+      },
+      {
+        "policy": "fixed_margin_10ms",
+        "samples": 45,
+        "accepted": 45,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 15,
+        "unsafe_rate_among_accepted": 0.3333333333333333,
+        "safe_accepted": 30,
+        "safe_rejected": 0
+      },
+      {
+        "policy": "static_residual_quantile",
+        "samples": 45,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 0,
+        "safe_rejected": 30,
+        "margin_ms": 85.569
+      },
+      {
+        "policy": "rolling_window_10_full_feedback",
+        "samples": 45,
+        "accepted": 11,
+        "acceptance_rate": 0.24444444444444444,
+        "unsafe_deployments": 1,
+        "unsafe_rate_among_accepted": 0.09090909090909091,
+        "safe_accepted": 10,
+        "safe_rejected": 20,
+        "mean_margin_ms": 68.80631111111111
+      },
+      {
+        "policy": "rolling_window_20_full_feedback",
+        "samples": 45,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 0,
+        "safe_rejected": 30,
+        "mean_margin_ms": 82.22593333333333
+      },
+      {
+        "policy": "rolling_window_50_full_feedback",
+        "samples": 45,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 0,
+        "safe_rejected": 30,
+        "mean_margin_ms": 85.74002222222222
+      }
+    ],
+    "randomized_seed101": [
+      {
+        "policy": "direct",
+        "samples": 33,
+        "accepted": 33,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 12,
+        "unsafe_rate_among_accepted": 0.36363636363636365,
+        "safe_accepted": 21,
+        "safe_rejected": 0
+      },
+      {
+        "policy": "twin_only",
+        "samples": 33,
+        "accepted": 33,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 12,
+        "unsafe_rate_among_accepted": 0.36363636363636365,
+        "safe_accepted": 21,
+        "safe_rejected": 0
+      },
+      {
+        "policy": "fixed_margin_10ms",
+        "samples": 33,
+        "accepted": 33,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 12,
+        "unsafe_rate_among_accepted": 0.36363636363636365,
+        "safe_accepted": 21,
+        "safe_rejected": 0
+      },
+      {
+        "policy": "static_residual_quantile",
+        "samples": 33,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 0,
+        "safe_rejected": 21,
+        "margin_ms": 85.569
+      },
+      {
+        "policy": "rolling_window_10_full_feedback",
+        "samples": 33,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 0,
+        "safe_rejected": 21,
+        "mean_margin_ms": 85.19136363636363
+      },
+      {
+        "policy": "rolling_window_20_full_feedback",
+        "samples": 33,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 0,
+        "safe_rejected": 21,
+        "mean_margin_ms": 85.02490909090909
+      },
+      {
+        "policy": "rolling_window_50_full_feedback",
+        "samples": 33,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 0,
+        "safe_rejected": 21,
+        "mean_margin_ms": 85.90745454545454
+      }
+    ],
+    "randomized_seed202": [
+      {
+        "policy": "direct",
+        "samples": 33,
+        "accepted": 33,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 12,
+        "unsafe_rate_among_accepted": 0.36363636363636365,
+        "safe_accepted": 21,
+        "safe_rejected": 0
+      },
+      {
+        "policy": "twin_only",
+        "samples": 33,
+        "accepted": 33,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 12,
+        "unsafe_rate_among_accepted": 0.36363636363636365,
+        "safe_accepted": 21,
+        "safe_rejected": 0
+      },
+      {
+        "policy": "fixed_margin_10ms",
+        "samples": 33,
+        "accepted": 33,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 12,
+        "unsafe_rate_among_accepted": 0.36363636363636365,
+        "safe_accepted": 21,
+        "safe_rejected": 0
+      },
+      {
+        "policy": "static_residual_quantile",
+        "samples": 33,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 0,
+        "safe_rejected": 21,
+        "margin_ms": 85.569
+      },
+      {
+        "policy": "rolling_window_10_full_feedback",
+        "samples": 33,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 0,
+        "safe_rejected": 21,
+        "mean_margin_ms": 83.72124242424242
+      },
+      {
+        "policy": "rolling_window_20_full_feedback",
+        "samples": 33,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 0,
+        "safe_rejected": 21,
+        "mean_margin_ms": 83.78269696969697
+      },
+      {
+        "policy": "rolling_window_50_full_feedback",
+        "samples": 33,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 0,
+        "safe_rejected": 21,
+        "mean_margin_ms": 85.84039393939395
+      }
+    ],
+    "randomized_seed303": [
+      {
+        "policy": "direct",
+        "samples": 33,
+        "accepted": 33,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 12,
+        "unsafe_rate_among_accepted": 0.36363636363636365,
+        "safe_accepted": 21,
+        "safe_rejected": 0
+      },
+      {
+        "policy": "twin_only",
+        "samples": 33,
+        "accepted": 33,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 12,
+        "unsafe_rate_among_accepted": 0.36363636363636365,
+        "safe_accepted": 21,
+        "safe_rejected": 0
+      },
+      {
+        "policy": "fixed_margin_10ms",
+        "samples": 33,
+        "accepted": 33,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 12,
+        "unsafe_rate_among_accepted": 0.36363636363636365,
+        "safe_accepted": 21,
+        "safe_rejected": 0
+      },
+      {
+        "policy": "static_residual_quantile",
+        "samples": 33,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 0,
+        "safe_rejected": 21,
+        "margin_ms": 85.569
+      },
+      {
+        "policy": "rolling_window_10_full_feedback",
+        "samples": 33,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 0,
+        "safe_rejected": 21,
+        "mean_margin_ms": 81.42
+      },
+      {
+        "policy": "rolling_window_20_full_feedback",
+        "samples": 33,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 0,
+        "safe_rejected": 21,
+        "mean_margin_ms": 83.16906060606061
+      },
+      {
+        "policy": "rolling_window_50_full_feedback",
+        "samples": 33,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 0,
+        "safe_rejected": 21,
+        "mean_margin_ms": 86.45212121212121
+      }
+    ],
+    "up_down": [
+      {
+        "policy": "direct",
+        "samples": 42,
+        "accepted": 42,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 14,
+        "unsafe_rate_among_accepted": 0.3333333333333333,
+        "safe_accepted": 28,
+        "safe_rejected": 0
+      },
+      {
+        "policy": "twin_only",
+        "samples": 42,
+        "accepted": 42,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 14,
+        "unsafe_rate_among_accepted": 0.3333333333333333,
+        "safe_accepted": 28,
+        "safe_rejected": 0
+      },
+      {
+        "policy": "fixed_margin_10ms",
+        "samples": 42,
+        "accepted": 42,
+        "acceptance_rate": 1.0,
+        "unsafe_deployments": 14,
+        "unsafe_rate_among_accepted": 0.3333333333333333,
+        "safe_accepted": 28,
+        "safe_rejected": 0
+      },
+      {
+        "policy": "static_residual_quantile",
+        "samples": 42,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 0,
+        "safe_rejected": 28,
+        "margin_ms": 85.569
+      },
+      {
+        "policy": "rolling_window_10_full_feedback",
+        "samples": 42,
+        "accepted": 5,
+        "acceptance_rate": 0.11904761904761904,
+        "unsafe_deployments": 1,
+        "unsafe_rate_among_accepted": 0.2,
+        "safe_accepted": 4,
+        "safe_rejected": 24,
+        "mean_margin_ms": 77.02661904761905
+      },
+      {
+        "policy": "rolling_window_20_full_feedback",
+        "samples": 42,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 0,
+        "safe_rejected": 28,
+        "mean_margin_ms": 80.74583333333334
+      },
+      {
+        "policy": "rolling_window_50_full_feedback",
+        "samples": 42,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "unsafe_deployments": 0,
+        "unsafe_rate_among_accepted": 0.0,
+        "safe_accepted": 0,
+        "safe_rejected": 28,
+        "mean_margin_ms": 86.01854761904762
+      }
+    ]
+  },
+  "rolling_window_candidates": [
+    {
+      "window": 10,
+      "unsafe_deployments": 2,
+      "safe_accepted": 14,
+      "accepted": 16,
+      "samples": 186
+    },
+    {
+      "window": 20,
+      "unsafe_deployments": 0,
+      "safe_accepted": 0,
+      "accepted": 0,
+      "samples": 186
+    },
+    {
+      "window": 50,
+      "unsafe_deployments": 0,
+      "safe_accepted": 0,
+      "accepted": 0,
+      "samples": 186
+    }
+  ],
+  "selected_window": 20,
+  "limitation": "Rolling policies use offline full feedback, including outcomes for changes they would have rejected."
+}

@@ -1,0 +1,14 @@
+{
+  "latency_sla_ms": 50.0,
+  "quantile_level": 0.95,
+  "probe_count": 20,
+  "e2e_ping_count": 20,
+  "validation_schedules": [
+    "randomized_seed101",
+    "randomized_seed202",
+    "randomized_seed303",
+    "abrupt_shift",
+    "up_down"
+  ],
+  "holdout_locked": true
+}

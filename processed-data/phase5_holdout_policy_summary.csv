@@ -1,0 +1,4 @@
+policy,samples,accepted,acceptance_rate,unsafe_deployments,unsafe_rate_among_accepted,unsafe_rate_ci95_low,unsafe_rate_ci95_high,safe_accepted,safe_rejected,unsafe_rejected,safe_coverage,safe_coverage_ci95_low,safe_coverage_ci95_high
+twin_only,33,33,1.0,14,0.42424242424242425,0.2723559663341021,0.5919273666268755,19,0,0,1.0,0.8318207759473837,1.0
+raw_candidate_link_sentinel,33,20,0.6060606060606061,1,0.05,0.008881448800795402,0.23613119344674205,19,0,13,1.0,0.8318207759473837,1.0
+conformal_candidate_link_sentinel,33,19,0.5757575757575758,0,0.0,0.0,0.16817922405261626,19,0,14,1.0,0.8318207759473837,1.0

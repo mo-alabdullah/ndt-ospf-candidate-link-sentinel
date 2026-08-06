@@ -1,0 +1,64 @@
+{
+  "dataset": "processed-data/phase3_delay_sweep.csv",
+  "total_samples": 55,
+  "calibration_samples": 22,
+  "test_samples": 33,
+  "latency_sla_ms": 50.0,
+  "static_quantile_level": 0.95,
+  "static_margin_ms": 23.354,
+  "rolling_window": 20,
+  "important_note": "Rolling evaluation uses offline full feedback. It does not solve the selective-feedback problem for rejected changes.",
+  "policies": [
+    {
+      "policy": "direct",
+      "test_samples": 33,
+      "accepted": 33,
+      "acceptance_rate": 1.0,
+      "unsafe_deployments": 20,
+      "unsafe_deployment_rate_among_accepted": 0.6060606060606061,
+      "safe_accepted": 13,
+      "safe_rejected": 0
+    },
+    {
+      "policy": "twin_only",
+      "test_samples": 33,
+      "accepted": 33,
+      "acceptance_rate": 1.0,
+      "unsafe_deployments": 20,
+      "unsafe_deployment_rate_among_accepted": 0.6060606060606061,
+      "safe_accepted": 13,
+      "safe_rejected": 0
+    },
+    {
+      "policy": "fixed_margin_10ms",
+      "test_samples": 33,
+      "accepted": 33,
+      "acceptance_rate": 1.0,
+      "unsafe_deployments": 20,
+      "unsafe_deployment_rate_among_accepted": 0.6060606060606061,
+      "safe_accepted": 13,
+      "safe_rejected": 0
+    },
+    {
+      "policy": "static_residual_quantile",
+      "test_samples": 33,
+      "accepted": 33,
+      "acceptance_rate": 1.0,
+      "unsafe_deployments": 20,
+      "unsafe_deployment_rate_among_accepted": 0.6060606060606061,
+      "safe_accepted": 13,
+      "safe_rejected": 0
+    },
+    {
+      "policy": "rolling_residual_quantile_full_feedback",
+      "test_samples": 33,
+      "accepted": 15,
+      "acceptance_rate": 0.45454545454545453,
+      "unsafe_deployments": 2,
+      "unsafe_deployment_rate_among_accepted": 0.13333333333333333,
+      "safe_accepted": 13,
+      "safe_rejected": 0,
+      "mean_margin_ms": 54.095666666666666
+    }
+  ]
+}

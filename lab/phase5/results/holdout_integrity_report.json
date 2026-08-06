@@ -1,0 +1,35 @@
+{
+  "dataset_rows": 33,
+  "json_records": 33,
+  "unique_sample_ids": 33,
+  "positions_complete_1_to_33": true,
+  "schedule_values": [
+    "holdout_seed909"
+  ],
+  "role_values": [
+    "holdout"
+  ],
+  "seed_values": [
+    909
+  ],
+  "delay_counts": {
+    "0.0": 3,
+    "1.0": 3,
+    "2.0": 3,
+    "5.0": 3,
+    "10.0": 3,
+    "15.0": 3,
+    "20.0": 3,
+    "25.0": 3,
+    "30.0": 3,
+    "35.0": 3,
+    "40.0": 3
+  },
+  "all_routes_match": true,
+  "unsafe_labels_match_rtt_threshold": true,
+  "policy_parameters_changed_after_freeze": false,
+  "source_sha256": {
+    "phase5_holdout_dataset.csv": "9041d4f4d796236abb2b20e912d25afe39ed6eeffb47096fe75141992deecdad",
+    "holdout_results.json": "a16c60526c98c674d3a8cb5ac7f594bd685292f463b0373fcc5539ace45806c1"
+  }
+}
