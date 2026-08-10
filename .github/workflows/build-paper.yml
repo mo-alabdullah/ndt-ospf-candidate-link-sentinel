@@ -20,11 +20,13 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install LaTeX
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-fonts-recommended
+          sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-fonts-recommended poppler-utils
 
       - name: Compile manuscript
         working-directory: paper
@@ -42,5 +44,6 @@ jobs:
             echo "PDF already current"
           else
             git commit -m "Build finalized 9-page TNSM manuscript PDF"
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
