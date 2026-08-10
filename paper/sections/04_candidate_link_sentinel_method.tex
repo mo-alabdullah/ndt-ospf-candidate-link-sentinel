@@ -1,0 +1,138 @@
+\section{Candidate-Link Sentinel Method}
+
+\subsection{Method overview}
+
+The candidate-link sentinel augments the twin's simulated end-to-end prediction with a targeted measurement of the link that the candidate OSPF change would activate. The method has four stages: identify the candidate link; probe that link in the operational network and the twin; correct the twin's candidate prediction using the observed link mismatch; and add a one-sided calibration margin and compare the result with the SLO.
+
+The targeted probe is available even when the candidate is ultimately rejected. This differs from residual-only adaptation, which may depend on observing post-deployment outcomes.
+
+\subsection{Candidate-link measurement}
+
+For candidate $c$, let $e_c$ be the link expected to become preferred after the OSPF cost change. The current implementation fixes
+\[
+e_c=(r_1,r_3).
+\]
+Before changing the operational OSPF cost, $r_1$ sends 20 ICMP echo requests to the directly connected $r_3$ address \texttt{192.168.2.2}. Addressing the neighbor interface directly forces the probe over $e_c$, even while the baseline route toward $h_3$ still traverses $r_2$.
+
+Let $L^o(e_c)$ be the operational mean candidate-link RTT, and let $L^t(e_c)$ be the corresponding mean RTT in the twin. The measured one-sided link discrepancy is
+\[
+\Delta(c)=\max\left(0,L^o(e_c)-L^t(e_c)\right).
+\]
+The maximum with zero makes the correction conservative for an upper-latency SLO: an operational link that is faster than its twin does not reduce the predicted RTT, while a slower operational link increases it.
+
+\subsection{Corrected candidate prediction}
+
+The candidate is simulated in the twin to obtain the end-to-end prediction $\widehat{Y}^{t}(c)$. The sentinel-corrected prediction is
+\[
+\widetilde{Y}(c)=\widehat{Y}^{t}(c)+\Delta(c).
+\]
+This correction assumes that the dominant operational/twin discrepancy lies on the newly activated link and that the link-level RTT difference transfers approximately to the end-to-end path. The assumption is appropriate for the controlled single-link latency experiment, but it is not a general decomposition theorem.
+
+\subsection{Calibration residual}
+
+For calibration candidate $i$, the signed one-sided residual is
+\[
+R_i=Y^o_i-\widetilde{Y}_i.
+\]
+Positive residuals indicate that the realized operational RTT exceeded the corrected prediction. Because the objective is an upper latency bound, the method uses an upper residual quantile rather than the absolute residual.
+
+Let $n$ be the number of independent calibration observations and $\alpha$ the target tail level. The finite-sample order-statistic rank is
+\[
+k=\min\left(n,\left\lceil(n+1)(1-\alpha)\right\rceil\right).
+\]
+After sorting the residuals as $R_{(1)}\le\cdots\le R_{(n)}$, the margin is
+\[
+q_\alpha=R_{(k)}.
+\]
+For the frozen policy,
+\[
+n=22,\qquad \alpha=0.05,\qquad k=22,\qquad q_\alpha=0.661\text{ ms}.
+\]
+The margin is computed once from \texttt{calibration\_seed77} and is not updated using validation or holdout outcomes.
+
+\subsection{Deployment rule}
+
+The one-sided upper score for candidate $c$ is
+\[
+U(c)=\widetilde{Y}(c)+q_\alpha.
+\]
+The frozen deployment policy is
+\[
+\pi(c)=
+\begin{cases}
+1,& U(c)\le\tau,\\
+0,& U(c)>\tau,
+\end{cases}
+\]
+where $\pi(c)=1$ means deploy and $\pi(c)=0$ means reject. For the present experiment, $\tau=50$ ms and $q_\alpha=0.661$ ms. No policy parameter is changed after the validation decision is frozen.
+
+\subsection{Policy pseudocode}
+
+{\footnotesize
+\begin{verbatim}
+Input:
+  candidate c
+  candidate link e_c
+  SLO threshold tau
+  frozen residual margin q_alpha
+
+1. Simulate c in the network twin.
+2. Measure twin candidate RTT: y_twin.
+3. Probe e_c operationally -> l_ops.
+4. Probe e_c in the twin -> l_twin.
+5. delta <- max(0, l_ops - l_twin)
+6. corrected <- y_twin + delta
+7. upper <- corrected + q_alpha
+8. if upper <= tau: DEPLOY
+   else: REJECT
+\end{verbatim}
+}
+
+In the experimental harness, Step 1 is followed by applying the candidate to the operational network solely to collect $Y^o(c)$ for evaluation. That ground-truth measurement is not used by the deploy/reject rule.
+
+Although Phases 4 and 5 share schedule definitions, their measurements were collected independently. Consequently, threshold-near observations differ: Phase 4 contains 121 safe and 65 unsafe validation outcomes, whereas Phase 5 contains 112 safe and 74 unsafe outcomes.
+
+\subsection{Compared policies}
+
+The experiment evaluates four deployment policies:
+\begin{enumerate}
+\item Direct deployment: $\pi_{\mathrm{direct}}(c)=1$.
+\item Twin-only validation: $\pi_{\mathrm{twin}}(c)=\mathbb{1}[\widehat{Y}^{t}(c)\le\tau]$.
+\item Raw candidate-link sentinel: $\pi_{\mathrm{raw}}(c)=\mathbb{1}[\widetilde{Y}(c)\le\tau]$.
+\item Conformal candidate-link sentinel: $\pi_{\mathrm{sentinel}}(c)=\mathbb{1}[\widetilde{Y}(c)+q_\alpha\le\tau]$.
+\end{enumerate}
+The conformal candidate-link sentinel is the policy frozen before holdout evaluation.
+
+\subsection{Validation-selection rule}
+
+A candidate policy is considered operationally non-vacuous only when it accepts at least one candidate and at least one safe candidate. It must also accept a safe candidate in every validation schedule. Among policies satisfying these conditions, selection minimizes the number of unsafe deployments, then maximizes safe-change coverage, then maximizes total acceptance.
+
+This rule prevents a policy from being selected merely because it rejects every candidate. In Phase 4, residual-only rolling policies with windows 20 and 50 had zero unsafe deployments but also zero accepted candidates; they were therefore rejected as vacuous.
+
+\subsection{Evaluation metrics}
+
+For $N$ candidates, let $D_i=\pi(c_i)$ be the binary deployment decision and let $Z_i=\mathbb{1}[Y_i^o>\tau]$ be the unsafe label. The acceptance rate is
+\[
+AR=\frac{1}{N}\sum_{i=1}^{N}D_i.
+\]
+The number of unsafe deployments is
+\[
+UD=\sum_{i=1}^{N}D_iZ_i.
+\]
+The unsafe rate among accepted candidates is
+\[
+URA=\frac{\sum_i D_iZ_i}{\sum_i D_i},
+\]
+when at least one candidate is accepted. Safe-change coverage is
+\[
+SC=\frac{\sum_iD_i(1-Z_i)}{\sum_i(1-Z_i)}.
+\]
+The paper also reports mean absolute prediction error, root mean squared prediction error, route agreement, and Wilson confidence intervals for binomial rates.
+
+\subsection{Computational cost}
+
+For a fixed candidate link and $P$ probe packets, the online arithmetic is constant time after measurement. The measurement cost is $O(P)$, while twin simulation and OSPF convergence dominate wall-clock latency. Calibration requires sorting $n$ residuals, with $O(n\log n)$ time and $O(n)$ storage. The current artifact does not measure controller runtime overhead separately.
+
+\subsection{Statistical interpretation}
+
+The margin is split-conformal-style, but the paper does not claim that it retains nominal 95\% predictive coverage under arbitrary drift. On the holdout, the binary deployment classifier separated all tested safe and unsafe candidates, while the upper score covered only 20 of 33 realized RTTs. The supported conclusion is therefore empirical evidence of safety and utility in the tested latency-drift regime, not a distribution-free coverage or zero-risk guarantee.

@@ -1,0 +1,84 @@
+\section{System and Threat Model}
+
+\subsection{System scope}
+
+We study pre-deployment validation of one class of network changes: modifying OSPF link costs so that traffic is moved from an indirect path to a direct link. The system consists of two isolated but structurally identical environments:
+\begin{itemize}
+\item an operational network, which represents the network in which a candidate change would be deployed; and
+\item a network digital twin, which is used to simulate the same candidate before deployment.
+\end{itemize}
+
+Both environments run unmodified FRRouting 10.5.1 instances inside Containerlab. Each contains three routers, $r_1,r_2,r_3$, connected as a triangle, and three end hosts, $h_1,h_2,h_3$, attached to the corresponding routers. IPv4 forwarding is enabled on the router containers, and all router-to-router OSPF interfaces are configured as point-to-point links.
+
+Let the operational and twin topologies be $G^o=(V,E)$ and $G^t=(V,E)$. In the experiment, the node set, link set, IP addressing, OSPF configuration, and candidate configuration are identical between $G^o$ and $G^t$. The environments differ only in an unmodeled performance property injected into the operational network.
+
+\subsection{Baseline and candidate OSPF states}
+
+The baseline OSPF costs are:
+\begin{itemize}
+\item $w(r_1,r_2)=10$;
+\item $w(r_2,r_3)=10$; and
+\item $w(r_1,r_3)=30$.
+\end{itemize}
+
+The destination LAN attached to $r_3$ contributes the default OSPF interface cost of 10. Consequently, the route from $r_1$ toward \texttt{192.168.13.0/24} has metric 30 through $r_2$ in the baseline state.
+
+The candidate change $c$ lowers the OSPF cost of the direct $r_1$--$r_3$ link from 30 to 5 in both directions. After convergence, the destination route has metric 15 and uses the direct next hop at \texttt{192.168.2.2}. The same candidate is evaluated in the operational and twin environments.
+
+\subsection{Service objective and safety label}
+
+The primary service metric is the mean round-trip time from $h_1$ to $h_3$, measured using 20 ICMP echo requests. Let $Y^o(c)$ denote the realized operational mean RTT after candidate $c$, and let $\widehat{Y}^{t}(c)$ denote the mean RTT predicted by executing the candidate in the twin. The latency service-level threshold is
+\[
+\tau = 50\text{ ms}.
+\]
+A realized candidate is labeled safe when $Y^o(c)\le \tau$, and unsafe when $Y^o(c)>\tau$.
+
+The experiment also records packet loss and the installed route. However, the deployment label used in the present paper is based only on mean RTT. All reported Phase 5 samples retain the same OSPF metric and next hop in the operational network and the twin.
+
+\subsection{Drift model}
+
+The drift source is non-malicious performance desynchronization rather than a security attacker. The operational direct link $r_1$--$r_3$ receives an additional \texttt{netem} delay $d$ on each direction, where
+\[
+d\in\{0,1,2,5,10,15,20,25,30,35,40\}\text{ ms}.
+\]
+No corresponding delay is inserted in the twin. Because the impairment is applied in both directions, its RTT contribution is approximately $2d$, subject to container and scheduling noise.
+
+This construction models a twin that is correct about topology, OSPF state, and the candidate configuration, but stale or incomplete with respect to the current latency of the link that the candidate will activate. It deliberately isolates performance-plane drift from control-plane disagreement.
+
+\subsection{Information available to the deployment policy}
+
+The policy may use the following information before an operational deployment decision:
+\begin{enumerate}
+\item the candidate OSPF change and the link it is expected to activate;
+\item the candidate's simulated end-to-end RTT in the twin;
+\item a direct RTT probe of the candidate link in the operational network;
+\item the corresponding candidate-link probe in the twin;
+\item the fixed SLO threshold; and
+\item a margin frozen using an independent calibration set.
+\end{enumerate}
+
+The operational post-change RTT $Y^o(c)$ is not a policy input. It is collected only to label the candidate and evaluate the decision.
+
+The experimental harness applies every candidate to the operational network after collecting the pre-deployment probes so that ground-truth outcomes are available for all policies, including candidates that a policy would have rejected. Policy decisions are then replayed from fields available before deployment. A live controller would instead simulate the candidate in the twin, compute the decision, and apply the candidate operationally only when the gate accepts it.
+
+\subsection{Assumptions}
+
+The current design makes the following assumptions:
+\begin{itemize}
+\item the candidate link is known from the proposed OSPF change;
+\item the link remains directly reachable for an active probe before deployment;
+\item probe traffic is small enough not to materially alter network performance;
+\item the operational state does not change materially between the probe and the deployment decision;
+\item the candidate affects one identifiable direct link;
+\item both OSPF instances converge before end-to-end measurements are collected;
+\item the latency SLO is known and fixed; and
+\item calibration observations are not drawn from the final holdout schedule.
+\end{itemize}
+
+The implementation identifies the candidate link explicitly for the three-router topology. Automatic candidate-path differencing is a proposed extension, not part of the evaluated artifact.
+
+\subsection{Out-of-scope failures}
+
+The present threat model does not cover malicious manipulation of probes or telemetry; packet-loss, capacity, queueing, or topology drift as the primary impairment; simultaneous drift on multiple links; failed or unreachable candidate links; changes to multiple OSPF weights in one transaction; interaction between concurrent controllers; transient packet consistency during installation; or large-scale and multi-area OSPF networks.
+
+These exclusions bound the current claim to empirical latency safety for the tested single-link OSPF reconfiguration.
