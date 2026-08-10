@@ -1,3 +1,25 @@
+@techreport{zhou2026ndtarch,
+  author      = {Cheng Zhou and others},
+  title       = {Network Digital Twin ({NDT}): Concepts and Reference Architecture},
+  institution = {Internet Research Task Force},
+  number      = {draft-irtf-nmrg-network-digital-twin-arch-12},
+  year        = {2026},
+  month       = feb,
+  note        = {Work in Progress},
+  url         = {https://datatracker.ietf.org/doc/draft-irtf-nmrg-network-digital-twin-arch/}
+}
+
+@techreport{zhou2026datacollection,
+  author      = {Cheng Zhou and Danyang Chen and Pedro Martinez-Julia and Qiufang Ma},
+  title       = {Data Collection Requirements and Technologies for Network Digital Twin},
+  institution = {Internet Engineering Task Force},
+  number      = {draft-zcz-nmrg-digitaltwin-data-collection-04},
+  year        = {2026},
+  month       = feb,
+  note        = {Work in Progress},
+  url         = {https://datatracker.ietf.org/doc/draft-zcz-nmrg-digitaltwin-data-collection/}
+}
+
 @techreport{moy1998ospf,
   author      = {John Moy},
   title       = {{OSPF Version 2}},
@@ -17,53 +39,15 @@
   doi       = {10.1109/INFCOM.2000.832225}
 }
 
-@techreport{zhou2026ndtarch,
-  author      = {Cheng Zhou and Hongwei Yang and Xiaodong Duan and Diego Lopez and Antonio Pastor and Qin Wu and Mohamed Boucadair and Christian Jacquenet},
-  title       = {Network Digital Twin ({NDT}): Concepts and Reference Architecture},
-  institution = {Internet Research Task Force},
-  number      = {draft-irtf-nmrg-network-digital-twin-arch-13},
-  year        = {2026},
-  month       = jul,
-  note        = {Work in Progress},
-  url         = {https://datatracker.ietf.org/doc/draft-irtf-nmrg-network-digital-twin-arch/}
-}
-
-@techreport{zhou2026datacollection,
-  author      = {Cheng Zhou and Danyang Chen and Pedro Martinez-Julia and Qiufang Ma},
-  title       = {Data Collection Requirements and Technologies for Network Digital Twin},
-  institution = {Internet Engineering Task Force},
-  number      = {draft-zcz-nmrg-digitaltwin-data-collection-05},
-  year        = {2026},
-  month       = jul,
-  note        = {Work in Progress},
-  url         = {https://datatracker.ietf.org/doc/draft-zcz-nmrg-digitaltwin-data-collection/}
-}
-
-@article{almasan2022ndt,
-  author  = {Paul Almasan and Miquel Ferriol-Galm{\'e}s and Jordi Paillisse and Jos{\'e} Su{\'a}rez-Varela and Diego Perino and Diego L{\'o}pez and Antonio Agustin Pastor Perales and Paul Harvey and Laurent Ciavaglia and Leon Wong and Vishnu Ram and Shihan Xiao and Xiang Shi and Xiangle Cheng and Albert Cabellos-Aparicio and Pere Barlet-Ros},
-  title   = {Network Digital Twin: Context, Enabling Technologies and Opportunities},
-  journal = {IEEE Communications Magazine},
-  year    = {2022},
-  doi     = {10.1109/MCOM.001.2200012}
-}
-
-@article{hui2022performance,
-  author  = {Linbo Hui and Mowei Wang and Liang Zhang and Lu Lu and Yong Cui},
-  title   = {Digital Twin for Networking: A Data-driven Performance Modeling Perspective},
-  journal = {arXiv preprint arXiv:2206.00310},
-  year    = {2022},
-  doi     = {10.48550/arXiv.2206.00310}
-}
-
-@inproceedings{fogel2015batfish,
-  author    = {Ari Fogel and Stanley Fung and Luis Pedrosa and Meg Walraed-Sullivan and Ramesh Govindan and Ratul Mahajan and Todd Millstein},
+@inproceedings{fogel2015analysis,
+  author    = {Ari Fogel and others},
   title     = {A General Approach to Network Configuration Analysis},
   booktitle = {12th USENIX Symposium on Networked Systems Design and Implementation (NSDI 15)},
   pages     = {469--483},
   year      = {2015}
 }
 
-@inproceedings{beckett2017minesweeper,
+@inproceedings{beckett2017verification,
   author    = {Ryan Beckett and Aarti Gupta and Ratul Mahajan and David Walker},
   title     = {A General Approach to Network Configuration Verification},
   booktitle = {Proceedings of the 2017 ACM SIGCOMM Conference},
@@ -89,7 +73,7 @@
 }
 
 @article{tibshirani2019covariate,
-  author  = {Ryan J. Tibshirani and Rina Foygel Barber and Emmanuel J. Cand{\`e}s and Aaditya Ramdas},
+  author  = {Ryan J. Tibshirani and Rina Foygel Barber and Emmanuel J. Candes and Aaditya Ramdas},
   title   = {Conformal Prediction Under Covariate Shift},
   journal = {arXiv preprint arXiv:1904.06019},
   year    = {2019},
@@ -97,7 +81,7 @@
 }
 
 @inproceedings{gibbs2021adaptive,
-  author    = {Isaac Gibbs and Emmanuel Cand{\`e}s},
+  author    = {Isaac Gibbs and Emmanuel Candes},
   title     = {Adaptive Conformal Inference Under Distribution Shift},
   booktitle = {Advances in Neural Information Processing Systems},
   volume    = {34},
@@ -106,7 +90,7 @@
 }
 
 @article{gibbs2024online,
-  author  = {Isaac Gibbs and Emmanuel J. Cand{\`e}s},
+  author  = {Isaac Gibbs and Emmanuel J. Candes},
   title   = {Conformal Inference for Online Prediction with Arbitrary Distribution Shifts},
   journal = {Journal of Machine Learning Research},
   volume  = {25},
@@ -115,18 +99,24 @@
   year    = {2024}
 }
 
-@article{bates2021risk,
-  author  = {Stephen Bates and Anastasios Angelopoulos and Lihua Lei and Jitendra Malik and Michael I. Jordan},
-  title   = {Distribution-Free, Risk-Controlling Prediction Sets},
-  journal = {Journal of the ACM},
-  volume  = {68},
-  number  = {6},
-  year    = {2021},
-  doi     = {10.1145/3478535}
+@article{almasan2022ndt,
+  author  = {Paul Almasan and others},
+  title   = {Network Digital Twin: Context, Enabling Technologies and Opportunities},
+  journal = {IEEE Communications Magazine},
+  year    = {2022},
+  doi     = {10.1109/MCOM.001.2200012}
 }
 
-@article{abenathar2025routeopt,
-  author  = {Rebecca Aben-Athar and Heitor Anglada and Lucas Costa and Joao Albuquerque and Abrahao Ferreira and Cristiano Bonato Both and Kleber Cardoso and Silvia Lins and Andrey Silva and Glauco Goncalves and Ilan Correa and Aldebaro Klautau},
+@article{hui2022digital,
+  author  = {Linbo Hui and Mowei Wang and Liang Zhang and Lu Lu and Yong Cui},
+  title   = {Digital Twin for Networking: A Data-driven Performance Modeling Perspective},
+  journal = {arXiv preprint arXiv:2206.00310},
+  year    = {2022},
+  doi     = {10.48550/arXiv.2206.00310}
+}
+
+@article{abenathar2025route,
+  author  = {Rebecca Aben-Athar and others},
   title   = {Network Digital Twin for Route Optimization in 5G/B5G Transport Slicing with What-If Analysis},
   journal = {arXiv preprint arXiv:2505.04879},
   year    = {2025},
@@ -142,14 +132,13 @@
 }
 
 @inproceedings{miao2026mirrornet,
-  author    = {Congcong Miao and Yuejie Wang and Jianming Wang and Xuefeng Ji and Guozhi Shan and Sirui Li and Pan Fang and Yanke Zhang and Jialin Li and Xianneng Zou and Guyue Liu},
+  author    = {Congcong Miao and others},
   title     = {MirrorNet: High-fidelity and Scalable Network Emulation for Software-defined WAN},
   booktitle = {23rd USENIX Symposium on Networked Systems Design and Implementation (NSDI 26)},
   pages     = {175--190},
   publisher = {USENIX Association},
   month     = may,
-  year      = {2026},
-  url       = {https://www.usenix.org/conference/nsdi26/presentation/miao}
+  year      = {2026}
 }
 
 @inproceedings{xia2026real,
@@ -159,8 +148,7 @@
   pages     = {1861--1877},
   publisher = {USENIX Association},
   month     = may,
-  year      = {2026},
-  url       = {https://www.usenix.org/conference/nsdi26/presentation/xia}
+  year      = {2026}
 }
 
 @techreport{wu2026agentndt,
@@ -170,6 +158,15 @@
   number      = {draft-wmz-nmrg-agent-ndt-arch-04},
   year        = {2026},
   month       = may,
-  note        = {Work in Progress},
-  url         = {https://datatracker.ietf.org/doc/draft-wmz-nmrg-agent-ndt-arch/}
+  note        = {Work in Progress}
+}
+
+@article{bates2021risk,
+  author  = {Stephen Bates and Anastasios Angelopoulos and Lihua Lei and Jitendra Malik and Michael I. Jordan},
+  title   = {Distribution-Free, Risk-Controlling Prediction Sets},
+  journal = {Journal of the ACM},
+  volume  = {68},
+  number  = {6},
+  year    = {2021},
+  doi     = {10.1145/3478535}
 }
